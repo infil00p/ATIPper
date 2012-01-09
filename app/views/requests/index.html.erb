@@ -1,0 +1,27 @@
+<h1>Listing requests</h1>
+<input type="hidden" id="form_token" value="<%= form_authenticity_token %>" />
+
+<table>
+  <tr>
+    <th></th>
+    <th>Agency</th>
+    <th>Request Text</th>
+    <th>Status</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td><input type="checkbox" id="request_<%= request.id %>" class="request_box"></input></td>
+    <td><%= request.agency.name %></td>
+    <td><%= link_to request.description, edit_request_path(request) %></td>
+    <td><%= request.status %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Request', new_request_path %>
+<a href="#" id="add_requests">Add Requests to Order</a>

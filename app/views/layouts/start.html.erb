@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ATIP Finder</title>
+  <link href="/stylesheets/application.css" rel="stylesheet" /> 
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+        <div class="pitch_content">
+            <%= yield %>
+        </div>
+        <div class="footer">
+            <%= yield :footer %>
+            <span class="copyright">Copyright 2011</span>
+        </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<h1>New request</h1>
+
+<div class="form">
+<%= render 'form' %>
+</div>
+<div class="help">
+<h3>Step 1</h3>
+<p>Please select the agency that you wish to request information from.  These Federal Government agencies and
+crown corporations are subject to the Access to Information Act</p>
+<h3>Step 2</h3>
+<p>Write your request.  This question should be short, but should contain the basic information:</p>
+<ul>
+  <li>Description of what you are looking for</li>
+  <li>Date the information may have been logged</li>
+  <li>Location of the information (i.e.: Which RCMP detatchment)</li>
+</ul>
+<p>Note: Vague requests will cause fees to increase.  While we are happy to facilitate the payment of 
+additional fees, it is advisable to avoid this if at all possible</p>
+</div>
+<%= link_to 'Back', requests_path %>

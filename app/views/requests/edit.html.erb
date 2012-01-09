@@ -1,0 +1,12 @@
+<h1>Editing Request</h1>
+
+<div class="form">
+<%= render 'edit_form' %>
+</div>
+<div class="help">
+<h3>Editing requests</h3>
+<p>Please take the time to edit the request, since requests can't be edited once they are sent to the Governemnt Agency.  If you wish to change which Government Agency, it is advisable to create a new request.  This request will remain pending until it is sent</p>
+<h3>Sending Requests:</h3>
+<p>Sending the request will add the request to the cart to be processed.  No requests will be sent to the government until we have received payment.</p>
+<%= link_to 'Show', @request%> |
+<%= link_to 'Back', request_path %>

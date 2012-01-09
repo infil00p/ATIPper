@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  request_id: 1
+  tx_id: MyString
+  amount: 9.99
+  status: MyString
+
+two:
+  request_id: 1
+  tx_id: MyString
+  amount: 9.99
+  status: MyString

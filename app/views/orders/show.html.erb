@@ -1,0 +1,87 @@
+<h1>Order Summary</h1>
+
+<div id="step_1">
+<table>
+<tr><th>Agency</th><th>Description</th><th>Filing Cost</th><th>Remove</th></tr>
+<% @requests.each do |request| %>
+  <tr>
+    <td><%= request.agency.name %></td>
+    <td><%= request.description %></td>
+    <td>5.00</td>
+    <td><input id="remove_req_<%= request.id %>" type="checkbox"></td>
+  </tr>
+<% end %>
+<tr><td colspan="2">Total:</td><td></td><td></td></tr>
+</table>
+<button class="proceed">Submit</button>
+<%= link_to 'Back', orders_path %>
+</div>
+<div id="step_2" style="display:none;">
+<h1>Enter your address information</h1>
+<%= form_for(@bill_addr) do |f| %>
+  <div class="left_pane">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :address1 %><br />
+      <%= f.text_field :address1 %>
+    </div>
+    <div class="field">
+      <%= f.label :address2 %><br />
+      <%= f.text_field :address2 %>
+    </div>
+    <div class="field">
+      <%= f.label :prov %><br />
+      <%= f.text_field :prov %>
+    </div>
+  </div>
+<% end %>
+<%= form_for(@ship_addr) do |f| %>
+  <div class="right_pane">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :address1 %><br />
+      <%= f.text_field :address1 %>
+    </div>
+    <div class="field">
+      <%= f.label :address2 %><br />
+      <%= f.text_field :address2 %>
+    </div>
+    </div>
+    <div class="field">
+      <%= f.label :prov %><br />
+      <%= f.text_field :prov %>
+    </div>
+<% end %>
+<button class="proceed">Submit</button>
+</div>
+<div id="step_3" style="display:none">
+<h1>Enter your credit card information</h1>
+  <div class="left_pane">
+    GIVE US MONEY, FOOL!!!
+  <div>
+  <div class="right_pane">
+    <div class="field">
+      <input type="text" id="payment_cc" name="payment[cc]" />
+    </div>
+    <div class="field">
+      <input type="text" id="payment_cvv" name="payment[cvv]" />
+    </div>
+    <div class="field">
+      <input type="text" id="payment_fname" name="payment[fname]" />
+    </div>
+    <div class="field">
+      <input type="text" id="payment_lname" name="payment[lname]" />
+    </div>
+    <div class="field">
+      <input type="text" id="payment_month" name="payment[month]" />
+      <input type="text" id="payment_year" name="payment[year]" />
+    </div>
+    <button>Submit<button>
+  </div>
+</div>
